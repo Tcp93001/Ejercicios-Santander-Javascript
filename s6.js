@@ -132,25 +132,25 @@
 //     this.job = job;
 // }
 
-class Person {
-    constructor(name, birthYear, job) {
-        this.name = name;
-        this.birthYear = birthYear;
-        this.job = job;
-    }
+// class Person {
+//     constructor(name, birthYear, job) {
+//         this.name = name;
+//         this.birthYear = birthYear;
+//         this.job = job;
+//     }
 
-    calculateAge() {
-        const today = new Date();
-        const year = today.getFullYear()
+//     calculateAge() {
+//         const today = new Date();
+//         const year = today.getFullYear()
 
-        console.log(year - this.birthYear)
-    }
-}
+//         console.log(year - this.birthYear)
+//     }
+// }
 
-const john = new Person('John', 1994, 'developer')
-const jane = new Person('Jane', 1995, 'designaer')
-const mark = new Person('MArk', 1974, 'accountant')
+// const john = new Person('John', 1994, 'developer')
+// const jane = new Person('Jane', 1995, 'designaer')
+// const mark = new Person('MArk', 1974, 'accountant')
 
-console.log(john)
-console.log(jane)
-console.log(mark)
+// console.log(john)
+// console.log(jane)
+// console.log(mark)
