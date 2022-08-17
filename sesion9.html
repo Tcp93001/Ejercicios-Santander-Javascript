@@ -1,0 +1,18 @@
+<body>
+    <h1 id="title">Document Object Model</h1>
+    <p class="hello-world">Hello World!</p>
+    <p class="hello-world">Here is a
+        <p>hola</p>
+        <h1 href="#">link</h1>
+    </p>
+
+    <script>
+        const title = document.getElementById('title');
+        console.log(title); // <h1 id="title">Document Object Model</h1>
+        const link = document.getElementsByTagName('p')
+        console.log('link', link)
+
+        const hello = document.getElementsByClassName('hello-world')
+        console.log('hello ', hello)
+    </script>
+  </body>

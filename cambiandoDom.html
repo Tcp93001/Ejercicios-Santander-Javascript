@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo de cambiar el DOM</title>
+</head>
+<body>
+    <p>two</p>
+    <p>One</p>
+    <p>three</p>
+
+
+    <script>
+        const paragraphs = document.getElementsByTagName('p');
+
+        console.log('coleccion de nodos', paragraphs.length)
+
+        console.log('Primer Nodo', paragraphs[0])
+        console.log('Segundo Nodo', paragraphs[1])
+        console.log('Tercer Nodo', paragraphs[2])
+
+    </script>
+</body>
+</html>
