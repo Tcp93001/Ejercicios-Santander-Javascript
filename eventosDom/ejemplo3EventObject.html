@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+      <title>Ejemplo 3: Key events</title>
+    </head>
+    <body>
+
+        <h2>Press Enter to turn this page blue.</h2>
+        <h2>Press Ctrl + Enter to turn this page orange.</h2>
+
+        <script>
+        // Code goes here
+            window.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    document.body.style.background = 'lightblue'
+                }
+
+                if (event.key === 'Enter' && event.ctrlKey) {
+                    document.body.style.background = 'orange'
+                }
+            })
+
+        </script>
+    </body>
+</html>

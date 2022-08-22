@@ -1,0 +1,103 @@
+<html>
+    <head>
+    <meta charset="utf8"/>
+    <title>Reto 3: Navegando entre tabs</title>
+    </head>
+    <body>
+
+        <div id="container">
+            <div id="tab-panel">
+                <div data-tabname="First">Tab one</div>
+                <div data-tabname="Second">Tab two</div>
+                <div data-tabname="Third">Tab three</div>
+            </div>
+        </div>
+
+
+        <script>
+            function createTabs(node) {
+                // Code goes here
+                if (!node.hasChildNodes()) return alert('No hay nodos hijo para este nodo');
+
+                const nodeChilds = [...node.childNodes]; // Convierte el HTML collection en un array
+                const validNodes = nodeChilds.filter(elem => elem.innerText);
+
+                validNodes.forEach((elem, index) => {
+                    elem.className = 'oculto'
+                    const buttonText = document.createTextNode(elem.dataset.tabname);
+                    const button = document.createElement('button')
+                    button.appendChild(buttonText)
+                    button.onclick = (e) => handleClick(e)
+                    button.name = elem.dataset.tabname
+                    const container = document.getElementById('container')
+                    container.insertBefore(button, node)
+
+                    if (index === 0) {
+                        elem.className = 'visible';
+                        button.className = 'color-me'
+                    }
+
+                })
+
+            }
+
+            createTabs(document.getElementById('tab-panel'))
+
+            function handleClick(event) {
+                const buttonClickedName = event.target.innerText;
+
+                const node = document.getElementById('tab-panel');
+                const nodeChilds = [...node.childNodes];
+                const availableNodes = nodeChilds.filter(elem => elem.innerText);
+
+                availableNodes.map(elem => {
+                    elem.className = 'oculto'
+
+                    if (elem.dataset.tabname === buttonClickedName) elem.className = 'visible'
+                })
+
+                const botones = document.getElementsByTagName('button');
+                const elementosBoton = [...botones]
+
+                elementosBoton.forEach((elem, index) => {
+                    elem.classList.remove('color-me')
+
+                    if (elem.name === buttonClickedName) elem.classList.add('color-me')
+                })
+
+                return;
+            }
+
+        </script>
+        <style>
+            body {
+                zoom: 3;
+            }
+
+            #container {
+                margin: 60px auto;
+                width: 300px;
+            }
+
+            button {
+                margin-bottom: 35px;
+                width: 33%;
+                border-radius: 5px;
+            }
+
+            .visible {
+                display: block,
+            }
+
+            .oculto {
+                display: none;
+            }
+
+            .color-me {
+                color:firebrick;
+                background-color: orange;
+            }
+
+        </style>
+    </body>
+</html>
